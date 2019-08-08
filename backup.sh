@@ -9,9 +9,9 @@ log_file=$archive_path/logs/$archive_date$log
 incremental_file=incremental.snap
 
 run() {
-    if [ ! -d "$archive_path" ]; then mkdir -p $archive_path fi
+    if [ ! -d "$archive_path" ]; then mkdir -p "$archive_path"; fi
     if [[ $CUSTOM_LOG -eq 0 ]]; then
-        if [[ ! -d "$archive_path/logs" ]]; then mkdir -p $archive_path/logs fi
+        if [ ! -d "$archive_path/logs" ]; then mkdir -p "$archive_path/logs"; fi
     fi
 	tar \
         -cvvg $incremental_file \
